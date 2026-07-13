@@ -22,11 +22,7 @@ def is_valid_word(word, guess, feedback):
     return True
 
 def filter_words(words, guess, feedback):
-    
-    for word in words:
-        if not is_valid_word(word, guess, feedback):
-            words.remove(word)
-    return words
+    return [w for w in words if is_valid_word(w, guess, feedback)]
 
 def get_guess():
     while True:

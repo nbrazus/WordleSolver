@@ -7,11 +7,11 @@ def main():
     while guessRemaining > 0:
         guess = get_guess()
         feedback = get_feedback()
-        remaining = filter_words(words, guess, feedback)
-        if len(remaining) <= 15:
-            print("Remaining possible words:", remaining)
+        words = filter_words(words, guess, feedback)
+        if len(words) <= 20:
+            print("Remaining possible words:", words)
         else:
-            print(f"Remaining possible words: {len(remaining)}")
+            print(f"Remaining possible words: {len(words)}")
         guessRemaining -= 1
     print("No more guesses remaining. Game over.")
 
