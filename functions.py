@@ -21,9 +21,8 @@ def is_valid_word(word, guess, feedback):
             return False
     return True
 
-def filter_words(guess, feedback):
-    with open('wordList.txt', 'r') as file:
-        words = file.read().splitlines()
+def filter_words(words, guess, feedback):
+    
     for word in words:
         if not is_valid_word(word, guess, feedback):
             words.remove(word)
